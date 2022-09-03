@@ -1,0 +1,38 @@
+.squeeze {
+    margin-bottom: 20px;
+
+    &_title {
+        margin: 0;
+        margin-top: 10px;
+        font-size: 20px;
+
+        &_for-copy {
+            cursor: pointer;
+        }
+    }
+
+    &_input {
+        margin: 0;
+        background-color: rgb(24, 24, 24);
+        font-size: 16px;
+        color: white;
+        border-radius: 5px;
+        border: 1px solid white;
+    }
+
+    &_button {
+        margin: 10px 0 0 5px;
+        background-color: rgb(24, 24, 24);
+        font-size: 16px;
+        color: white;
+        border-radius: 5px;
+        border: 1px solid white;
+            cursor: pointer;  
+    }
+
+    &_error {
+        font-size: 18px;
+        font-weight: normal;
+        color: rgb(252, 71, 71);
+    }
+}

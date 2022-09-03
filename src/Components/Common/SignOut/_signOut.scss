@@ -1,0 +1,18 @@
+.signout {
+    &_button {
+        margin: 0 0 20px 0;
+        padding: 3px 5px;
+        background-color: rgb(24, 24, 24);
+        font-size: 16px;
+        color: white;
+        border-radius: 5px;
+        border: 1px solid white;
+        cursor: pointer;  
+        
+        &_link,
+        &:visited, &:link, &:active  {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}

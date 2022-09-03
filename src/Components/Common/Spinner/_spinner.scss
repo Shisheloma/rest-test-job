@@ -1,0 +1,16 @@
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin-left: 30%;
+    background: url("../../../../assets/spinner.webp") no-repeat center/contain;
+    animation: spinner 1s infinite linear;
+
+    @keyframes spinner {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
