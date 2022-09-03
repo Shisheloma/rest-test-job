@@ -18,7 +18,7 @@ export const statisticsThunk = (order, token, offset = 0, nextPage = true, limit
                 "Authorization": `Bearer ${token}`,  
             },
         });  
-        // slow down fetching to show spinner
+        // slow down fetching to show spinner for demonstration purposes 
         await new Promise(resolve => setTimeout(() => resolve(), 500));
         if (response.status === 200) {
             console.log(response);

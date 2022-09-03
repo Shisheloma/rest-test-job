@@ -14,7 +14,9 @@ export const loginThunk = ({ username , password }) => async dispatch => {
             url:  `http://79.143.31.216/login`,
             headers: { 'content-type': 'application/x-www-form-urlencoded' },
             data: body
-           }); 
+        });         
+        // slow down fetching to show spinner for demonstration purposes
+        await new Promise(resolve => setTimeout(() => resolve(), 300));
         if (response.status === 200) {
             const token = response.data.access_token;
             localStorage.setItem('userToken', token);

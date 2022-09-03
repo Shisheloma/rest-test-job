@@ -15,6 +15,8 @@ export const registerThunk = ({ username , password }) => async dispatch => {
                 password
             }
            });
+        // slow down fetching to show spinner for demonstration purposes
+        await new Promise(resolve => setTimeout(() => resolve(), 300));
         if (response.status === 200) {
             await dispatch(registerReducer(registerSuccess()));
             await dispatch(loginThunk({ username , password }));

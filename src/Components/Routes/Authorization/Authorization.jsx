@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 import { loginThunk } from '../../Features/login/login.thunk';
 import { registerThunk } from '../../Features/register/register.thunk';
-import { getLoginError, getToken } from '../../Features/login/login.selectors';
-import { getRegisterError } from '../../Features/register/register.selectors';
+import { getLoginError, getLoginLoading, getToken } from '../../Features/login/login.selectors';
+import { getRegisterError, getRegisterLoading } from '../../Features/register/register.selectors';
+import Spinner from '../../Common/Spinner/Spinner';
 
 import './_authorization.scss';
 
@@ -14,7 +15,9 @@ const Authorization = () => {
     const [errorToShow, setErrorToShow] = useState();
     const dispatch = useDispatch();
     const userToken = useSelector(getToken);
+    const loginLoading = useSelector(getLoginLoading); 
     const loginError = useSelector(getLoginError);
+    const registerLoading = useSelector(getRegisterLoading); 
     const registerError = useSelector(getRegisterError);
     
     const navigate = useNavigate();
@@ -63,6 +66,7 @@ const Authorization = () => {
                     <span className='authorization_form_label'> Password: </span>
                     <input className='authorization_form_input' type="password" placeholder='Password' value={input.password} onChange={passwordHandler}/>
                     <br /> 
+                    {(loginLoading || registerLoading) && <Spinner/> }
                     <span className='authorization_form_success'>{(userToken !== '') && `Successful`}</span>
                     <span className='authorization_form_error'>{(errorToShow === 'register') && registerError && `Error: ${registerError}`}</span>
                     <span className='authorization_form_error'>{(errorToShow === 'login') && loginError && `Error: ${loginError}`}</span>
